@@ -1,0 +1,11 @@
+.idea
+.git
+__pycache__
+.pt
+.tar
+.mp3
+.wav
+venv
+static
+log
+data
