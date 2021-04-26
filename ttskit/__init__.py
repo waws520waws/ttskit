@@ -1,5 +1,5 @@
 """
-![aukit](aukit.png "aukit")
+![ttskit](ttskit.png "ttskit")
 
 ## ttskit
 Text To Speech Toolkit: 语音合成工具箱。
