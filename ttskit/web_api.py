@@ -4,6 +4,17 @@
 ### web_api
 语音合成WEB接口。
 构建简单的语音合成服务。
+
++ 简单使用
+```python
+from ttskit import web_api
+
+web_api.app.run(host='0.0.0.0', port=2718, debug=False)
+# 用POST或GET方法请求：http://localhost:2718/tts，传入参数text、audio、speaker。
+# 例如GET方法请求：http://localhost:2718/tts?text=这是个例子&audio=2
+```
+
++ 使用说明
 """
 from pathlib import Path
 import logging
@@ -30,7 +41,7 @@ def parse_request(req_data):
 
 
 @app.route('/tts', methods=['POST', 'GET'])
-def index():
+def tts_web():
     data = parse_request(request)
     text = data.get('text', '这是个样例')
     speaker = data.get('speaker', 'biaobei')

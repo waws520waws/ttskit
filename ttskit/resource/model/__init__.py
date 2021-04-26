@@ -2,7 +2,6 @@
 # date: 2021/4/25
 """
 ### model
-__init__.py
 ge2e.kuangdd.pt
 mellotron.kuangdd-rtvc.pt
 mellotron_hparams.json

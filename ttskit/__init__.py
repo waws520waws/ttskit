@@ -38,7 +38,7 @@ import waveglow
 import resource
 from sdk_api import tts_sdk as tts
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 version_doc = """
 ### 版本

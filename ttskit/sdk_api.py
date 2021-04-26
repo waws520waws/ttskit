@@ -4,6 +4,13 @@
 ### sdk_api
 语音合成SDK接口。
 本地函数式地调用语音合成。
+
++ 简单使用
+```python
+from ttskit import sdk_api
+
+wav = sdk_api.tts_sdk('文本', audio='1')
+```
 """
 from pathlib import Path
 import logging
@@ -177,10 +184,9 @@ def tts_sdk(text, speaker='biaobei', audio='0', **kwargs):
     global _dataloader
     if _dataloader is None:
         load_models(**kwargs)
+
     if str(audio).isdigit():
         audio = _reference_audio_list[(int(audio) - 1) % len(_reference_audio_list)]
-    elif audio in _reference_audio_dict:
-        audio = _reference_audio_dict[audio]
     elif os.path.isfile(audio):
         audio = str(audio)
     elif isinstance(audio, bytes):
@@ -191,6 +197,8 @@ def tts_sdk(text, speaker='biaobei', audio='0', **kwargs):
         tmp_audio = tempfile.TemporaryFile(suffix='.wav')
         tmp_audio.write(base64.standard_b64decode(audio))
         audio = tmp_audio.name
+    elif speaker in _reference_audio_dict:
+        audio = _reference_audio_dict[speaker]
     else:
         raise AssertionError
     text_data, style_data, speaker_data, f0_data, mel_data = transform_mellotron_input_data(

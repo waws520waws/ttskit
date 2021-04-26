@@ -2,7 +2,6 @@
 # date: 2021/4/25
 """
 ### audio
-__init__.py
 aliaudio-Aibao-000009.wav
 aliaudio-Aicheng-000008.wav
 aliaudio-Aida-000002.wav

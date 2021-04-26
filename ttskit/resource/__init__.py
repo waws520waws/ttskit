@@ -3,11 +3,10 @@
 """
 ### resource
 模型数据等资源。
-__init__.py
+
 audio
 model
 reference_audio
-reference_audio.tar
 """
 from pathlib import Path
 import logging
