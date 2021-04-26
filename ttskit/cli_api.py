@@ -14,15 +14,16 @@ cli_api.tts_cli(args)
 # 命令行交互模式使用语音合成。
 ```
 
-+ 使用说明
++ 命令行
 ```
-usage: cli_api.py [-h] [-i INTERACTION] [-t TEXT] [-s SPEAKER] [-a AUDIO]
-                  [-o OUTPUT] [-m MELLOTRON_PATH] [-w WAVEGLOW_PATH]
-                  [-g GE2E_PATH]
-                  [--mellotron_hparams_path MELLOTRON_HPARAMS_PATH]
-                  [--waveglow_kwargs_json WAVEGLOW_KWARGS_JSON]
+tkcli
 
-语音合成
+usage: tkcli [-h] [-i INTERACTION] [-t TEXT] [-s SPEAKER] [-a AUDIO]
+             [-o OUTPUT] [-m MELLOTRON_PATH] [-w WAVEGLOW_PATH] [-g GE2E_PATH]
+             [--mellotron_hparams_path MELLOTRON_HPARAMS_PATH]
+             [--waveglow_kwargs_json WAVEGLOW_KWARGS_JSON]
+
+语音合成命令行。
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -81,7 +82,7 @@ _example_audio_list = [f'{num}' for num, audio in enumerate(sdk_api._reference_a
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='语音合成')
+    parser = argparse.ArgumentParser(description='语音合成命令行。')
     parser.add_argument('-i', '--interaction', type=int, default=1,
                         help='是否交互，如果1则交互，如果0则不交互。交互模式下：如果不输入文本或发音人，则为随机。如果输入文本为exit，则退出。')
     parser.add_argument('-t', '--text', type=str, default="欢迎使用语音合成接口。",
